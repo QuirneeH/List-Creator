@@ -13,11 +13,3 @@ h1{
 .options i{
     font-size: 20px;
 }
-
-#register{
-    display: flex;
-}
-
-#registerName, #registerStudio‎{
-    width: 100px;
-}
