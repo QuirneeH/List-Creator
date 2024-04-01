@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.options{
+    margin: 0 5px 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options i{
+    font-size: 20px;
+}
+
