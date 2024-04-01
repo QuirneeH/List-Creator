@@ -14,3 +14,10 @@ h1{
     font-size: 20px;
 }
 
+#register{
+    display: flex;
+}
+
+#name{
+    width: 10px;
+}
