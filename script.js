@@ -1,5 +1,7 @@
 const form = document.getElementById('register');
-const table = document.getElementById('table');
+const tableFinish = document.getElementById('tableFinish');
+const tableWatching = document.getElementById('tableWatching');
+const tableWish = document.getElementById('tableWish');
 const buttonEdit = document.getElementsByClassName("fa fa-pencil");
 const buttonDelete = document.getElementsByClassName("fa fa-trash");
 var animes = [];
@@ -14,15 +16,40 @@ form.addEventListener('submit', () => {
     
     const name = document.getElementById('registerName').value;
     const studio = document.getElementById('registerStudio').value;
+    const status = document.getElementById('registerStatus').value;
+
+    if(status === 'Terminei') {
+        const data = {
+            name: name,
+            studio: studio
+        }
     
-    const data = {
-        name: name,
-        studio: studio
+        animes.push(data)
+    
+        localStorage.setItem("wish", JSON.stringify(animes));
     }
 
-    animes.push(data)
+    if(status === 'Assistindo') {
+        const data = {
+            name: name,
+            studio: studio
+        }
+    
+        animes.push(data)
+    
+        localStorage.setItem("wish", JSON.stringify(animes));
+    }
 
-    localStorage.setItem("anime", JSON.stringify(animes));
+    if(status === 'Vou Assistir') {
+        const data = {
+            name: name,
+            studio: studio
+        }
+    
+        animes.push(data)
+    
+        localStorage.setItem("wish", JSON.stringify(animes));
+    }
 });
 
 /**
@@ -52,45 +79,61 @@ function remove(id) {
 /**
  * Exibição da Tabela com as Informações
  */
-function showTable() {
-    if(localStorage.anime) {
-        table.style.display = "block";
-        animes = JSON.parse(localStorage.getItem("anime"));
+function showTables() {
+    if(localStorage.finish) {
+        tableFinish.style.display = "block";
+        
+        animes = JSON.parse(localStorage.getItem("finish"));
+    }
+
+    if(localStorage.watching) {
+        tableWatching.style.display = "block";
+
+        animes = JSON.parse(localStorage.getItem("watching"));
+    }
+
+    if(localStorage.wish) {
+        tableWish.style.display = "block";
+
+        animes = JSON.parse(localStorage.getItem("wish"));
     }
     
     for(var i in animes) {
         //Corpo da Tabela
         tbody = document.createElement("tbody");
         table.append(tbody);
+
         //Informação: Nome
         dataName = document.createElement("td");
         dataName.innerHTML = animes[i].name;
         tbody.append(dataName);
+
         //Informação: Estudio
         dataStudio = document.createElement("td");
         dataStudio.innerHTML = animes[i].studio;
         tbody.append(dataStudio);
+
         //Div dos Botões de Opção
-        div = document.createElement("div");
-        div.classList.add("options");
-        tbody.append(div);
+        divOptions = document.createElement("div");
+        divOptions.classList.add("options");
+        tbody.append(divOptions);
+
         //Botões de Opção: Editar e Exclur
         buttonPencil = document.createElement("button");
         buttonPencil.id = "optionEdit" + i;
         buttonTrash = document.createElement("button");
         buttonTrash.id = "optionDelete" + i;
-        div.append(buttonPencil, buttonTrash);
+        divOptions.append(buttonPencil, buttonTrash);
+
         //Botões de Editar
         optionPencil = document.createElement("i");
         optionPencil.classList.add("fa", "fa-pencil");
         buttonPencil.append(optionPencil);
+
         //Botão de Excluir
         optionTrash = document.createElement("i");
         optionTrash.classList.add("fa", "fa-trash");
         buttonTrash.append(optionTrash);
-
-        //Atribuir função de Excluir
-        // ...
     }
 
     //Atribuir função de Editar
@@ -100,6 +143,7 @@ function showTable() {
         });
     }
 
+    //Atribuir função de Editar
     for (let i = 0; i < buttonDelete.length; i++) {
         buttonDelete[i].addEventListener("click", function() {
             remove(i);
@@ -107,27 +151,5 @@ function showTable() {
     }
 }
 
-// <!-- Form from Edit Informação -->
-// <form id="update">
-//     <label for="updateName">Nome: </label>
-//     <input type="text" id="updateName">
-
-//     <label for="updateStudio">Estudio: </label>
-//     <input type="text" id="updateStudio">
-
-//     <input type="submit" value="Enviar">
-// </form>
-// <!-- /Form from Edit Informação --></input>
-function generateForm() {
-    tdForm = document.createElement("form");
-    tdLabel = document.createElement("label");
-    tdInput = document.createElement("input");
-    tbody = document.createElement("tbody");
-    
-    tdForm.classList.add("update");
-
-}
-
 //Execuções
-showTable();
-
+showTables();

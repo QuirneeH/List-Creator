@@ -11,30 +11,86 @@
     <!-- Title -->
     <h1>ANIME</h1>
     
-    <!-- Form Informação -->
+    <!-- Form Information -->
     <form id="register" action="" method="">
         <label for="registerName">Nome: </label>
         <input type="text" id="registerName"><br>
 
         <label for="registerStudio">Estudio: </label>
         <input type="text" id="registerStudio"><br>
+
+        <div class="registerStatus">
+            <label for="Status">Situação: </label>
+
+            <div class="ratioFinish">
+                <input type="radio" name="status" id="finish">
+                <label for="finish">Terminei</label>
+            </div>
+
+            <div class="ratioWatching">
+                <input type="radio" name="status" id="watching">
+                <label for="finish">Assistindo</label>
+            </div>
+
+            <div class="ratioWish">
+                <input type="radio" name="status" id="wish">
+                <label for="finish">Vou Assistir</label>
+            </div>
+        </div>
+        
+        <div class="divFinish" style="display: none;">
+            <label for="note">Nota: </label>
+            <input type="number" name="note" id="note">
+        </div>
+
+        <div class="divWatching" style="display: none;">
+            <label for="season">Temporada: </label>
+            <input type="number" name="season" id="season">
+
+            <label for="episode">Episodio: </label>
+            <input type="number" name="episode" id="episode">
+        </div>
         
         <input type="submit" value="Enviar">
     </form>
-    <!-- /Form Informação -->
+    <!-- /Form Information -->
     <hr>
 
-    <!-- Table for Informação -->
-    <table id="table" style="display: none;">
+    <!-- Table for Information -->
+    <table id="tableFinish" style="display: none;">
+        <h2>Terminei</h2>
+        <thead>
+            <th>Nome</th>
+            <th>Estudio</th>
+            <th>Nota</th>
+            <th>Opções</th>
+        </thead>
+    </table>
+    <!-- /Table for Information -->
+
+    <!-- Table for Information -->
+    <table id="tableWatching" style="display: none;">
+        <h2>Assistindo</h2>
+        <thead>
+            <th>Nome</th>
+            <th>Estudio</th>
+            <th>Temporada</th>
+            <th>Episodio</th>
+            <th>Opções</th>
+        </thead>
+    </table>
+    <!-- /Table for Information -->
+
+    <!-- Table for Information -->
+    <table id="tableWish" style="display: none;">
+        <h2>Vou Assistir</h2>
         <thead>
             <th>Nome</th>
             <th>Estudio</th>
             <th>Opções</th>
-            <th></th>
         </thead>
     </table>
-    <!-- /Table for Informação -->
+    <!-- /Table for Information -->
 </body>
 </html>
 <script src="script.js"></script>
-<script src="s.js"></script>
