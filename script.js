@@ -258,7 +258,7 @@ function showTables() {
         for(var i in animes) {
             //Corpo da Tabela
             tbody = document.createElement("tbody");
-            tableFinish.append(tbody);
+            tableWish.append(tbody);
 
             //Informação: Nome
             dataName = document.createElement("td");
