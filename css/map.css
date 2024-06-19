@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* TABELAS */
+.tables{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+#tableFinish{
+    grid-column: 1/2;
+}
+
+#tableWatching{
+    grid-column: 2/3;
+}
+
+#tableWish{
+    grid-column: 3/4;
+}

@@ -1,0 +1,68 @@
+@charset "UTF-8";
+:root{
+    /* Cores */
+    --primary: #ff0000;
+    --second: #888888;
+    ---tirth: #6e403e;
+}
+
+*{
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    color: white;
+    background-color: black;
+}
+
+h2{
+    margin-bottom: 0;
+    background-color: #ff0000;
+}
+
+.options{
+    margin: 0 5px 0 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options i{
+    font-size: 20px;
+}
+
+input[type=ratio]{
+    display: flex;
+    justify-content: center;
+}
+
+.registerStatus{
+    display: flex;
+}
+
+.ratioFinish label, .ratioWatching label, .ratioWish label{
+    display: flex;
+    justify-content: center;
+}
+
+.list table{
+    table-layout: fixed;
+}
+
+.list th{
+    background-color: var(--primary);
+}
+
+.list td{
+    height: 17px;
+    max-height: 17px;
+    overflow: hidden;
+}
+
+tbody:nth-child(odd){
+    background-color: var(--second);
+}
+
+tbody:nth-child(even){
+    background-color: var(---tirth);
+}
