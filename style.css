@@ -1,13 +1,8 @@
 @charset "UTF-8";
 
-<<<<<<< HEAD
 h2{
     margin-bottom: 0;
     background-color: #ff0000;
-=======
-h1{
-    text-align: center;
->>>>>>> b1f90377aa8615557ee0ac3a03d8e0d0ba716dee
 }
 
 .options{
@@ -19,7 +14,6 @@ h1{
 .options i{
     font-size: 20px;
 }
-<<<<<<< HEAD
 
 input[type=ratio]{
     display: flex;
@@ -34,5 +28,3 @@ input[type=ratio]{
     display: flex;
     justify-content: center;
 }
-=======
->>>>>>> b1f90377aa8615557ee0ac3a03d8e0d0ba716dee
