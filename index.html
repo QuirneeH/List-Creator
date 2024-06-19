@@ -1,30 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LS</title>
-    </head>
-    <body>
-        <h1>ANIME</h1>
-        <form id="register" action="" method="">
-            <label for="name">Nome: </label>
-            <input type="text" id="name"><br>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Title -->
+    <h1>ANIME</h1>
+    
+    <!-- Form Information -->
+    <form id="register" action="" method="">
+        <label for="registerName">Nome: </label>
+        <input type="text" id="registerName"><br>
+
+        <label for="registerStudio">Estudio: </label>
+        <input type="text" id="registerStudio"><br>
+
+        <div class="registerStatus">
+            <label for="Status">Situação: </label>
+
+            <div class="ratioFinish">
+                <input type="radio" name="status" id="finish" value="finish" onclick="showOptionsFinished()">
+                <label for="finish">Terminei</label>
+            </div>
+
+            <div class="ratioWatching">
+                <input type="radio" name="status" id="watching" value="watching" onclick="showOptionsWatching()">
+                <label for="watching">Assistindo</label>
+            </div>
+
+            <div class="ratioWish">
+                <input type="radio" name="status" id="wish" value="wish" onclick="hideOptions()">
+                <label for="wish">Vou Assistir</label>
+            </div>
+        </div>
         
-            <label for="studio">Estudio: </label>
-        <input type="text" id="studio"><br>
+        <div id="divFinish" style="display: none;">
+            <label for="note">Nota: </label>
+            <input type="number" name="note" id="finishNote">
+        </div>
+
+        <div id="divWatching" style="display: none;">
+            <label for="season">Temporada: </label>
+            <input type="number" name="season" id="watchingSeason">
+
+            <label for="episode">Episodio: </label>
+            <input type="number" name="episode" id="watchingEpisode">
+        </div>
         
         <input type="submit" value="Enviar">
     </form>
-    
+    <!-- /Form Information -->
     <hr>
-    
-    <table id="table">
+
+    <!-- Table for Information -->
+    <table id="tableFinish" style="display: none;">
+        <h2>Terminei</h2>
         <thead>
             <th>Nome</th>
             <th>Estudio</th>
+            <th>Nota</th>
+            <th>Opções</th>
         </thead>
     </table>
+    <!-- /Table for Information -->
+
+    <!-- Table for Information -->
+    <table id="tableWatching" style="display: none;">
+        <h2>Assistindo</h2>
+        <thead>
+            <th>Nome</th>
+            <th>Estudio</th>
+            <th>Temporada</th>
+            <th>Episodio</th>
+            <th>Opções</th>
+        </thead>
+    </table>
+    <!-- /Table for Information -->
+
+    <!-- Table for Information -->
+    <table id="tableWish" style="display: none;">
+        <h2>Vou Assistir</h2>
+        <thead>
+            <th>Nome</th>
+            <th>Estudio</th>
+            <th>Opções</th>
+        </thead>
+    </table>
+    <!-- /Table for Information -->
 </body>
 </html>
+<script src="ratioDiv.js"></script>
 <script src="script.js"></script>
