@@ -11,53 +11,56 @@
 <body>
     <section class="form">
         <!-- Title -->
-    <h1>LIST</h1>
-    
-    <!-- Form Information -->
-    <form id="register" action="" method="">
-        <label for="registerName">Nome: </label>
-        <input type="text" id="registerName"><br>
-
-        <label for="registerStudio">Estudio: </label>
-        <input type="text" id="registerStudio"><br>
-
-        <div class="registerStatus">
-            <label for="Status">Situação: </label>
-
-            <div class="ratioFinish">
-                <input type="radio" name="status" id="finish" value="finish" onclick="showOptionsFinished()">
-                <label for="finish">Terminei</label>
-            </div>
-
-            <div class="ratioWatching">
-                <input type="radio" name="status" id="watching" value="watching" onclick="showOptionsWatching()">
-                <label for="watching">Assistindo</label>
-            </div>
-
-            <div class="ratioWish">
-                <input type="radio" name="status" id="wish" value="wish" onclick="hideOptions()">
-                <label for="wish">Vou Assistir</label>
-            </div>
-        </div>
+        <h1>LIST</h1>
         
-        <div id="divFinish" style="display: none;">
-            <label for="note">Nota: </label>
-            <input type="number" name="note" id="finishNote">
-        </div>
+        <!-- Form Information -->
+        <form id="register" action="" method="">
+            <label for="registerName">Nome: </label>
+            <input type="text" id="registerName"><br>
 
-        <div id="divWatching" style="display: none;">
-            <label for="season">Temporada: </label>
-            <input type="number" name="season" id="watchingSeason">
+            <label for="registerStudio">Estudio: </label>
+            <input type="text" id="registerStudio"><br>
 
-            <label for="episode">Episodio: </label>
-            <input type="number" name="episode" id="watchingEpisode">
-        </div>
-        
-        <input type="submit" value="Enviar">
-    </form>
-    <!-- /Form Information -->
+            <div class="registerStatus">
+                <label for="Status">Situação: </label>
+
+                <div class="ratioFinish">
+                    <input type="radio" name="status" id="finish" value="finish" onclick="showOptionsFinished()">
+                    <label for="finish">Terminei</label>
+                </div>
+
+                <div class="ratioWatching">
+                    <input type="radio" name="status" id="watching" value="watching" onclick="showOptionsWatching()">
+                    <label for="watching">Assistindo</label>
+                </div>
+
+                <div class="ratioWish">
+                    <input type="radio" name="status" id="wish" value="wish" onclick="hideOptions()">
+                    <label for="wish">Vou Assistir</label>
+                </div>
+            </div>
+            
+            <div id="divFinish" style="display: none;">
+                <label for="note">Nota: </label>
+                <input type="number" name="note" id="finishNote">
+            </div>
+
+            <div id="divWatching" style="display: none;">
+                <label for="season">Temporada: </label>
+                <input type="number" name="season" id="watchingSeason">
+
+                <label for="episode">Episodio: </label>
+                <input type="number" name="episode" id="watchingEpisode">
+            </div>
+            
+            <button type="submit">Enviar</button>
+        </form>
+        <!-- /Form Information -->
     </section>
+    <script src="js/ratio.js"></script>
+
     <hr>
+    
     <section class="tables">
         <!-- Table for Information -->
         <table class="list" id="tableFinish">
@@ -67,15 +70,9 @@
                 <th>Nota</th>
                 <th>Opções</th>
             </thead>
-            <tbody>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-            </tbody>
-            <tbody>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
+
+            <tbody id="tbodyFinish">
+                
             </tbody>
         </table>
         <!-- /Table for Information -->
@@ -89,11 +86,9 @@
                 <th>Episodio</th>
                 <th>Opções</th>
             </thead>
-            <tbody>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
-                <td>...</td>
+
+            <tbody id="tbodyWatching">
+               
             </tbody>
         </table>
         <!-- /Table for Information -->
@@ -105,14 +100,15 @@
                 <th>Estudio</th>
                 <th>Opções</th>
             </thead>
-            <body>
-                <td>...</td>
-                <td>...</td>
-            </body>
+
+            <tbody id="tbodyWish">
+                
+            </tbody>
         </table>
         <!-- /Table for Information -->
     </section>
+
+    <script src="js/storage.js"></script>
+    <script src="js/tables.js"></script>
 </body>
 </html>
-<script src="js/ratio.js"></script>
-<script src="js/tables.js"></script>
