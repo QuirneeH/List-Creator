@@ -6,21 +6,87 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const datas = getDatas();
-    clearInputs();
+    var list = [];
 
     // Armazenando os Animes Terminados
     if(datas['status'] === "finish") {
-        localStorage.setItem(datas['status'], JSON.stringify(datas));
+        const verify = !!localStorage.getItem("finish");
+
+        if(verify) {
+            const finishList = JSON.parse(localStorage.getItem("finish"));
+            let i = finishList.length;
+
+            list = finishList;
+
+            if(dataComparator(list, datas)){
+                alert("Obra Já Adicionada");
+            } else {
+                list[i] = datas;
+            
+                localStorage.removeItem(datas['status']);
+                localStorage.setItem(datas['status'], JSON.stringify(list));
+                clearInputs();
+            }
+        } else {
+            list[0] = datas;
+
+            localStorage.setItem(datas['status'], JSON.stringify(list));
+            clearInputs();
+        }
     }
 
     // Armazenando os Animes Assistindo
     if(datas['status'] === "watching") {
-        localStorage.setItem(datas['status'], JSON.stringify(datas));
+        const verify = !!localStorage.getItem("watching");
+
+        if(verify) {
+            const watchingList = JSON.parse(localStorage.getItem("watching"));
+            let i = watchingList.length;
+
+            list = watchingList;
+
+            if(dataComparator(list, datas)){
+                alert("Obra Já Adicionada");
+            } else {
+                list[i] = datas;
+            
+                localStorage.removeItem(datas['status']);
+                localStorage.setItem(datas['status'], JSON.stringify(list));
+                clearInputs();
+            }
+        } else {
+            list[0] = datas;
+
+            localStorage.setItem(datas['status'], JSON.stringify(list));
+            clearInputs();
+        }
     }
 
-    // Armazenando os Animes Vou Assistir
+    // Armazenando os Animes Desejados
     if(datas['status'] === "wish") {
-        localStorage.setItem(datas['status'], JSON.stringify(datas));
+        const verify = !!localStorage.getItem("wish");
+
+        if(verify) {
+            const wishList = JSON.parse(localStorage.getItem("wish"));
+            let i = wishList.length;
+
+            list = wishList;
+
+            if(dataComparator(list, datas)){
+                alert("Obra Já Adicionada");
+            } else {
+                list[i] = datas;
+            
+                localStorage.removeItem(datas['status']);
+                localStorage.setItem(datas['status'], JSON.stringify(list));
+                clearInputs();
+            }
+        } else {
+            list[0] = datas;
+
+            localStorage.setItem(datas['status'], JSON.stringify(list));
+            clearInputs();
+        }
     }
 });
 
@@ -54,6 +120,7 @@ function getDatas() {
         'season': season,
         'episode': episode
     };
+
     return datas;
 }
 
@@ -73,4 +140,20 @@ function clearInputs() {
 
     document.getElementById('divFinish').style.display = 'none';
     document.getElementById('divWatching').style.display = 'none';
+}
+
+/**
+ * 
+ * @param {Array} list 
+ * @param {Array} datas 
+ * @returns {boolean}
+ */
+function dataComparator(list, datas) {
+    // Verifica se cada elemento é igual
+    for (let i = 0; i < list.length; i++) {
+        if (list[i]['name'] === datas['name']) {
+            return true;
+        }
+    }
+    return false;
 }

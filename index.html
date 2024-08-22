@@ -15,6 +15,7 @@
         
         <!-- Form Information -->
         <form id="register" action="" method="">
+            <!-- Keys -->
             <label for="registerName">Nome: </label>
             <input type="text" id="registerName"><br>
 
@@ -39,7 +40,7 @@
                     <label for="wish">Vou Assistir</label>
                 </div>
             </div>
-            
+            <!-- Hidden divs -->
             <div id="divFinish" style="display: none;">
                 <label for="note">Nota: </label>
                 <input type="number" name="note" id="finishNote">
@@ -52,7 +53,7 @@
                 <label for="episode">Episodio: </label>
                 <input type="number" name="episode" id="watchingEpisode">
             </div>
-            
+            <!-- Submit -->
             <button type="submit">Enviar</button>
         </form>
         <!-- /Form Information -->
@@ -60,9 +61,8 @@
     <script src="js/ratio.js"></script>
 
     <hr>
-    
+    <!-- Tables -->
     <section class="tables">
-        <!-- Table for Information -->
         <table class="list" id="tableFinish">
             <thead>
                 <th>Nome</th>
@@ -70,14 +70,12 @@
                 <th>Nota</th>
                 <th>Opções</th>
             </thead>
-
+            
             <tbody id="tbodyFinish">
                 
             </tbody>
         </table>
-        <!-- /Table for Information -->
-
-        <!-- Table for Information -->
+        
         <table class="list" id="tableWatching">
             <thead>
                 <th>Nome</th>
@@ -91,9 +89,7 @@
                
             </tbody>
         </table>
-        <!-- /Table for Information -->
 
-        <!-- Table for Information -->
         <table class="list" id="tableWish">
             <thead>
                 <th>Nome</th>
@@ -105,10 +101,11 @@
                 
             </tbody>
         </table>
-        <!-- /Table for Information -->
+        <!-- /Tables -->
     </section>
 
     <script src="js/storage.js"></script>
     <script src="js/tables.js"></script>
+    <script src="js/options.js"></script>
 </body>
 </html>
