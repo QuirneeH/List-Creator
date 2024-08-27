@@ -35,7 +35,7 @@ h2 {
 }
 
 .registerStatus {
-    width: 40%;
+    width: 300px;
     display: flex;
     justify-content: space-between;
 }
