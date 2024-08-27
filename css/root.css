@@ -1,68 +1,110 @@
 @charset "UTF-8";
-:root{
+
+:root {
     /* Cores */
-    --primary: #ff0000;
-    --second: #888888;
-    ---tirth: #6e403e;
+    --primary: #ff000051;
+    --second: #000000;
+    ---tirth: #ffffffd0;
 }
 
-*{
+* {
     margin: 0;
+    font-weight: 600;
 }
 
-body{
+body {
     height: 100vh;
-    color: white;
-    background-color: black;
+    background: url(../images/background/madara.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-h2{
+h2 {
     margin-bottom: 0;
     background-color: #ff0000;
 }
 
-.options{
+.options {
     margin: 0 5px 0 5px;
     display: flex;
     justify-content: space-between;
 }
 
-.options i{
+.options i {
     font-size: 20px;
 }
 
-input[type=ratio]{
+.registerStatus {
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#ratioFinish label,
+#ratioWatching label,
+#ratioWish label {
+    display: flex;
+}
+
+#finish,
+#watching,
+#wish {
+    width: 100%;
+}
+
+#divWathing {
+    display: flex;
+    flex-direction: column;
+}
+
+.tables {
+    width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    line-height: 25px;
 }
 
-.registerStatus{
-    display: flex;
-}
-
-.ratioFinish label, .ratioWatching label, .ratioWish label{
-    display: flex;
-    justify-content: center;
-}
-
-.list table{
+.list {
     table-layout: fixed;
+    padding-bottom: 20px;
 }
 
-.list th{
+.list th {
     background-color: var(--primary);
 }
 
-.list td{
+.list td {
     height: 17px;
     max-height: 17px;
     overflow: hidden;
 }
 
-tbody:nth-child(odd){
+tbody:nth-child(odd) {
     background-color: var(--second);
+    font-weight: 600;
 }
 
-tbody:nth-child(even){
+tbody:nth-child(even) {
     background-color: var(---tirth);
+    color: var(--second);
+    font-weight: 600;
+}
+
+.th-opt {
+    width: 15vh;
+}
+
+.th-name,
+.th-studio {
+    width: 30vh;
+}
+
+.form {
+    background: #ffffff2c;
+}
+
+.hidden-divs {
+    display: flex;
+    justify-content: center;
 }

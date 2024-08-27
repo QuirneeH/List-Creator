@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/tables.css">
 </head>
 <body>
     <section class="form">
         <!-- Title -->
-        <h1>LIST</h1>
+        <h1>ANIME LIST</h1>
         
         <!-- Form Information -->
         <form id="register" action="" method="">
@@ -25,17 +26,17 @@
             <div class="registerStatus">
                 <label for="Status">Situação: </label>
 
-                <div class="ratioFinish">
+                <div id="ratioFinish">
                     <input type="radio" name="status" id="finish" value="finish" onclick="showOptionsFinished()">
                     <label for="finish">Terminei</label>
                 </div>
 
-                <div class="ratioWatching">
+                <div id="ratioWatching">
                     <input type="radio" name="status" id="watching" value="watching" onclick="showOptionsWatching()">
                     <label for="watching">Assistindo</label>
                 </div>
 
-                <div class="ratioWish">
+                <div id="ratioWish">
                     <input type="radio" name="status" id="wish" value="wish" onclick="hideOptions()">
                     <label for="wish">Vou Assistir</label>
                 </div>
@@ -47,11 +48,17 @@
             </div>
 
             <div id="divWatching" style="display: none;">
-                <label for="season">Temporada: </label>
-                <input type="number" name="season" id="watchingSeason">
+                <div class="hdnWatching">
+                    <label for="season">Temporada: </label>
+                    <input type="number" name="season" id="watchingSeason">
+                </div>
+                
 
-                <label for="episode">Episodio: </label>
-                <input type="number" name="episode" id="watchingEpisode">
+                <div class="hdnWatching">
+                    <label for="episode">Episodio: </label>
+                    <input type="number" name="episode" id="watchingEpisode">
+                </div>
+                
             </div>
             <!-- Submit -->
             <button type="submit">Enviar</button>
@@ -65,41 +72,30 @@
     <section class="tables">
         <table class="list" id="tableFinish">
             <thead>
-                <th>Nome</th>
-                <th>Estudio</th>
+                <th class="th-name">Nome</th>
+                <th class="th-studio">Estudio</th>
                 <th>Nota</th>
-                <th>Opções</th>
+                <th class="th-opt">Opções</th>
             </thead>
-            
-            <tbody id="tbodyFinish">
-                
-            </tbody>
         </table>
         
         <table class="list" id="tableWatching">
+
             <thead>
-                <th>Nome</th>
-                <th>Estudio</th>
+                <th class="th-name">Nome</th>
+                <th class="th-studio">Estudio</th>
                 <th>Temporada</th>
                 <th>Episodio</th>
-                <th>Opções</th>
+                <th class="th-opt">Opções</th>
             </thead>
-
-            <tbody id="tbodyWatching">
-               
-            </tbody>
         </table>
 
         <table class="list" id="tableWish">
             <thead>
-                <th>Nome</th>
-                <th>Estudio</th>
-                <th>Opções</th>
+                <th class="th-name">Nome</th>
+                <th class="th-studio">Estudio</th>
+                <th class="th-opt">Opções</th>
             </thead>
-
-            <tbody id="tbodyWish">
-                
-            </tbody>
         </table>
         <!-- /Tables -->
     </section>
