@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+.input-txt, .hidden {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hidden {
+    padding-right: 30px;
+}
+
+.registerStatus {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.radio {
+    grid-column: 2/3;
+    display: grid;
+    grid-template-columns: 20px auto;
+}
+
+.radio input[type=radio] {
+    width: 13px;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+}
+
+#form-submit {
+    width: 80px;
+    height: 22px;
+    background-color: var(--positive);
+    border: 1.3px solid var(--second);
+}
+
+#form-submit:hover {
+    background-color: var(--positive-hover);
+    color: #ffffffb7;
+    text-shadow: 1px 1px 5px #ffffff;
+    cursor: pointer;
+}

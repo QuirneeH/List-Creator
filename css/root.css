@@ -5,23 +5,47 @@
     --primary: #ff000051;
     --second: #000000;
     ---tirth: #ffffffd0;
+
+    --even: #d2d2d230;
+    --odd: #d2d2d27d;
+    
+
+    --positive: #22ff0060;
+    --positive-hover: #22ff00;
+    --alter: #fff70092;
+    --alter-hover: #fff700aa;
+    --negative: #ff000060;
+    --negative-hover: #ff0000;
 }
 
 * {
     margin: 0;
     font-weight: 600;
+    font-family: 'Calibri';
 }
 
 body {
     height: 100vh;
-    background: url(../images/background/madara.gif);
+    background: url(../images/background/luffy.gif);
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+h1 {
+    text-align: center;
 }
 
 h2 {
     margin-bottom: 0;
     background-color: #ff0000;
+}
+
+input[type=text] {
+    width: 130px;
+}
+
+input[type=number] {
+    width: 40px;
 }
 
 .options {
@@ -34,73 +58,15 @@ h2 {
     font-size: 20px;
 }
 
-.registerStatus {
-    width: 300px;
-    display: flex;
-    justify-content: space-between;
-}
-
-#ratioFinish label,
-#ratioWatching label,
-#ratioWish label {
-    display: flex;
-}
-
-#finish,
-#watching,
-#wish {
-    width: 100%;
-}
-
-#divWathing {
-    display: flex;
-    flex-direction: column;
-}
-
-.tables {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 25px;
-}
-
-.list {
-    table-layout: fixed;
-    padding-bottom: 20px;
-}
-
-.list th {
-    background-color: var(--primary);
-}
-
-.list td {
-    height: 17px;
-    max-height: 17px;
-    overflow: hidden;
-}
-
-tbody:nth-child(odd) {
-    background-color: var(--second);
-    font-weight: 600;
-}
-
-tbody:nth-child(even) {
-    background-color: var(---tirth);
-    color: var(--second);
-    font-weight: 600;
-}
-
 .th-opt {
     width: 15vh;
 }
 
-.th-name,
-.th-studio {
+.th-name, .th-studio {
     width: 30vh;
 }
 
-.form {
+.nav {
     background: #ffffff2c;
 }
 

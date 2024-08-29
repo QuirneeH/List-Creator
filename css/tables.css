@@ -1,1 +1,66 @@
 @charset "UTF-8";
+
+.list {
+    table-layout: fixed;
+    padding-bottom: 20px;
+}
+
+.list th {
+    background-color: var(--primary);
+}
+
+.list td {
+    overflow: hidden;
+}
+
+.tables h1 {
+    background-color: var(--primary);
+    font-size: 32px;
+    text-shadow: 1px 1px #ffffff87;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+}
+
+tbody:nth-child(even) {
+    background-color: var(--even);
+    color: var(--second);
+    font-weight: 600;
+}
+
+tbody:nth-child(odd) {
+    background-color: var(--odd);
+    font-weight: 600;
+}
+
+tbody:hover {
+    background-color: white;
+}
+
+/* OPÇÕES */
+.td-options {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-option {
+    width: 45%;
+    height: 25px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid black;
+}
+
+.btn-option#edit:hover {
+    background: var(--alter-hover);
+    text-shadow: 1px 1px 5px black;
+    font-size: 15px;
+}
+
+.btn-option#delete:hover {
+    background: var(--negative-hover);
+    text-shadow: 1px 1px 5px black;
+    font-size: 15px;
+}

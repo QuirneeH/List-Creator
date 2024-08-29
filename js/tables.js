@@ -15,7 +15,7 @@ function dataFinish() {
             finishList[i]['note']
         ]
     
-        setUpTable(datas);
+        setUpTable(datas, i);
     }
 }
 
@@ -32,7 +32,7 @@ function dataWatching() {
             watchingList[i]['episode'],
         ]
     
-        setUpTable(datas);
+        setUpTable(datas, i);
     }
 }
 
@@ -47,15 +47,51 @@ function dataWish() {
             wishList[i]['studio'],
         ]
     
-        setUpTable(datas);
+        setUpTable(datas, i);
     }
 }
 
 /**
+ * Método criador do botão para edição
+ * @param {int} index Numero referente ao índice do array com os dados
+ * @returns {HTMLButtonElement}
+ */
+function createButtonEdit(index) {
+    const buttonEdit = document.createElement('button');
+    buttonEdit.classList.add('btn-option', index);
+    buttonEdit.id = "edit";
+
+    const optEdit = document.createElement('i');
+    optEdit.classList.add('fa', 'fa-pencil');
+
+    buttonEdit.append(optEdit);
+
+    return buttonEdit;
+}
+
+/**
+ * Método criador do botão para deleção
+ * @param {int} index Numero referente ao índice do array com os dados
+ * @returns {HTMLButtonElement}
+ */
+function createButtonDelete(index) {
+    const buttonDelete = document.createElement('button');
+    buttonDelete.classList.add('btn-option', index);
+    buttonDelete.id = "delete";
+
+    const optDelete = document.createElement('i');
+    optDelete.classList.add('fa', 'fa-trash');
+    
+    buttonDelete.append(optDelete);
+
+    return buttonDelete;
+}
+/**
  * Método de montagem e exibição das tabelas
  * @param {Array} datas Dados especificos de cada tabela
+ * @param {int} index Numero referente ao índice do array com os dados
  */
-function setUpTable(datas) {
+function setUpTable(datas, index) {
     if(datas[0] === "finish")
         table = document.getElementById('tableFinish');
     else if(datas[0] === "watching")
@@ -68,15 +104,24 @@ function setUpTable(datas) {
     }
 
     const tbody = document.createElement('tbody');
-    tbody.id = "tbodyFinish";
+    tbody.id = "tbody-" + datas[0];
     table.append(tbody);
 
-    for (let j = 1; j < datas.length; j++) {
+    for(let i = 1; i < datas.length; i++) {
         const td = document.createElement('td');
-        td.innerHTML = datas[j];
-
+        td.innerHTML = datas[i];
+        
         tbody.append(td);
     }
+
+    const tdOpt = document.createElement('td');
+    tdOpt.classList.add('td-options');
+
+    const buttonEdit = createButtonEdit(index);
+    const buttonDelete = createButtonDelete(index);
+
+    tdOpt.append(buttonEdit, buttonDelete);
+    tbody.append(tdOpt);
 }
 
 // Validador para exibir as tabelas
@@ -92,3 +137,5 @@ if(verifyWathing)
 
 if(verifyWish) 
     dataWish();
+
+

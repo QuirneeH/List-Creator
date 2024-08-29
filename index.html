@@ -7,96 +7,112 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/map.css">
+    <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="css/tables.css">
+
 </head>
 <body>
-    <section class="form">
+    <section class="nav">
         <!-- Title -->
         <h1>ANIME LIST</h1>
         
         <!-- Form Information -->
         <form id="register" action="" method="">
             <!-- Keys -->
-            <label for="registerName">Nome: </label>
-            <input type="text" id="registerName"><br>
-
-            <label for="registerStudio">Estudio: </label>
-            <input type="text" id="registerStudio"><br>
-
+            <div class="input-txt">
+                <label for="registerName">Nome: </label>
+                <input type="text" id="registerName">
+            </div>
+            
+            <div class="input-txt">
+                <label for="registerStudio">Estudio: </label>
+                <input type="text" id="registerStudio">
+            </div>
+            
             <div class="registerStatus">
                 <label for="Status">Situação: </label>
 
-                <div id="ratioFinish">
+                <div class="radio" id="ratioFinish">
                     <input type="radio" name="status" id="finish" value="finish" onclick="showOptionsFinished()">
                     <label for="finish">Terminei</label>
                 </div>
 
-                <div id="ratioWatching">
+                <div class="radio" id="ratioWatching">
                     <input type="radio" name="status" id="watching" value="watching" onclick="showOptionsWatching()">
                     <label for="watching">Assistindo</label>
                 </div>
 
-                <div id="ratioWish">
+                <div class="radio" id="ratioWish">
                     <input type="radio" name="status" id="wish" value="wish" onclick="hideOptions()">
                     <label for="wish">Vou Assistir</label>
                 </div>
             </div>
             <!-- Hidden divs -->
             <div id="divFinish" style="display: none;">
-                <label for="note">Nota: </label>
-                <input type="number" name="note" id="finishNote">
+                <div class="hidden">
+                    <label for="note">Nota: </label>
+                    <input type="number" name="note" id="finishNote" min="0" max="10">
+                </div>
             </div>
 
             <div id="divWatching" style="display: none;">
-                <div class="hdnWatching">
-                    <label for="season">Temporada: </label>
-                    <input type="number" name="season" id="watchingSeason">
-                </div>
-                
-
-                <div class="hdnWatching">
+                <div class="hidden">
                     <label for="episode">Episodio: </label>
-                    <input type="number" name="episode" id="watchingEpisode">
+                    <input type="number" name="episode" id="watchingEpisode" min="1" step="1">
                 </div>
                 
+                <div class="hidden">
+                    <label for="season">Temporada: </label>
+                    <input type="number" name="season" id="watchingSeason" min="1" step="1">
+                </div>
             </div>
             <!-- Submit -->
-            <button type="submit">Enviar</button>
+            <div class="button-area">
+                <div class="submit">
+                    <button type="submit" id="form-submit">Enviar</button>
+                </div>
+            </div>
         </form>
         <!-- /Form Information -->
     </section>
     <script src="js/ratio.js"></script>
-
-    <hr>
     <!-- Tables -->
     <section class="tables">
-        <table class="list" id="tableFinish">
-            <thead>
-                <th class="th-name">Nome</th>
-                <th class="th-studio">Estudio</th>
-                <th>Nota</th>
-                <th class="th-opt">Opções</th>
-            </thead>
-        </table>
+        <div class="table" id="divFinish">
+            <h1>FINALIZADOS</h1>
+            <table class="list" id="tableFinish">
+                <thead>
+                    <th class="th-name">Nome</th>
+                    <th class="th-studio">Estudio</th>
+                    <th>Nota</th>
+                    <th class="th-opt">Opções</th>
+                </thead>
+            </table>
+        </div>
         
-        <table class="list" id="tableWatching">
-
-            <thead>
-                <th class="th-name">Nome</th>
-                <th class="th-studio">Estudio</th>
-                <th>Temporada</th>
-                <th>Episodio</th>
-                <th class="th-opt">Opções</th>
-            </thead>
-        </table>
-
-        <table class="list" id="tableWish">
-            <thead>
-                <th class="th-name">Nome</th>
-                <th class="th-studio">Estudio</th>
-                <th class="th-opt">Opções</th>
-            </thead>
-        </table>
+        <div class="table" id="divWatching">
+            <h1>ASSISTINDO</h1>
+            <table class="list" id="tableWatching">
+                <thead>
+                    <th class="th-name">Nome</th>
+                    <th class="th-studio">Estudio</th>
+                    <th>Temporada</th>
+                    <th>Episodio</th>
+                    <th class="th-opt">Opções</th>
+                </thead>
+            </table>
+        </div>
+        
+        <div class="table" id="divWish">
+            <h1>VOU ASSISTIR</h1>
+            <table class="list" id="tableWish">
+                <thead>
+                    <th class="th-name">Nome</th>
+                    <th class="th-studio">Estudio</th>
+                    <th class="th-opt">Opções</th>
+                </thead>
+            </table>
+        </div>
         <!-- /Tables -->
     </section>
 
