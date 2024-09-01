@@ -3,7 +3,7 @@
 /* BODY */
 body {
     display: grid;
-    grid-template-columns: 30vh;
+    grid-template-columns: 25vh;
 }
 
 /* NAV */
@@ -14,19 +14,8 @@ body {
 
 /* TABELAS */
 .tables {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    line-height: 25px;
-}
-
-.tables {
-    display: grid;
-    grid-template-rows: auto auto auto;
     grid-column: 2/3;
 }
-
 
 #divFinish {
     grid-row: 1/2;

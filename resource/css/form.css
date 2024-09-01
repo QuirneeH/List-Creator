@@ -1,12 +1,21 @@
 @charset "UTF-8";
 
+.nav {
+    background: #ffffff2c;
+}
+
 .input-txt, .hidden {
     display: flex;
     justify-content: space-between;
 }
 
 .hidden {
-    padding-right: 30px;
+    padding-right: 20px;
+}
+
+.hidden-divs {
+    display: flex;
+    justify-content: center;
 }
 
 .registerStatus {
@@ -19,6 +28,7 @@
     display: grid;
     grid-template-columns: 20px auto;
 }
+
 
 .radio input[type=radio] {
     width: 13px;

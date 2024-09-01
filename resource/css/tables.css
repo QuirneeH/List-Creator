@@ -1,8 +1,7 @@
 @charset "UTF-8";
 
 .list {
-    table-layout: fixed;
-    padding-bottom: 20px;
+    width: 100%;
 }
 
 .list th {
@@ -13,6 +12,14 @@
     overflow: hidden;
 }
 
+.tables {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: baseline;
+    line-height: 25px;
+}
+
 .tables h1 {
     background-color: var(--primary);
     font-size: 32px;
@@ -20,26 +27,38 @@
 }
 
 .table {
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-tbody:nth-child(even) {
-    background-color: var(--even);
-    color: var(--second);
-    font-weight: 600;
+@media(max-height: 100vh) {
+    .table {
+        overflow-y: scroll;
+    }
+
+    .table::-webkit-scrollbar {
+        display: none;
+    }
+}
+.options {
+    display: flex;
+    justify-content: space-between;
 }
 
-tbody:nth-child(odd) {
-    background-color: var(--odd);
-    font-weight: 600;
+.options i {
+    font-size: 20px;
 }
 
-tbody:hover {
-    background-color: white;
+.th-opt {
+    width: 15vh;
 }
 
-/* OPÇÕES */
+.list .th-name, .list .th-studio{
+    width: 100vh;
+}
+
 .td-options {
     display: flex;
     justify-content: space-around;
@@ -56,11 +75,16 @@ tbody:hover {
 .btn-option#edit:hover {
     background: var(--alter-hover);
     text-shadow: 1px 1px 5px black;
-    font-size: 15px;
+    color: var(--tirth);
 }
 
 .btn-option#delete:hover {
     background: var(--negative-hover);
     text-shadow: 1px 1px 5px black;
-    font-size: 15px;
+    color: var(--tirth);
+}
+
+.infos {
+    overflow-y: scroll;
+    border-collapse: collapse;
 }

@@ -2,12 +2,12 @@
 
 :root {
     /* Cores */
-    --primary: #ff000051;
+    --primary: #ff00008d;
     --second: #000000;
-    ---tirth: #ffffffd0;
+    --tirth: #ffffffd0;
 
-    --even: #d2d2d230;
-    --odd: #d2d2d27d;
+    --even: #c4c4c486;
+    --odd: #fafafa9b;
     
 
     --positive: #22ff0060;
@@ -26,11 +26,13 @@
 
 body {
     height: 100vh;
+    overflow: hidden;
     background: url(../images/background/luffy.gif);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+/* TEXTO */
 h1 {
     text-align: center;
 }
@@ -40,37 +42,33 @@ h2 {
     background-color: #ff0000;
 }
 
+tbody td{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* INPUTS */
 input[type=text] {
-    width: 130px;
+    width: 90px;
 }
 
 input[type=number] {
     width: 40px;
 }
 
-.options {
-    margin: 0 5px 0 5px;
-    display: flex;
-    justify-content: space-between;
+/* TABELAS */
+tbody:nth-child(even) {
+    background-color: var(--even);
+    color: var(--second);
+    font-weight: 600;
 }
 
-.options i {
-    font-size: 20px;
+tbody:nth-child(odd) {
+    background-color: var(--odd);
+    font-weight: 600;
 }
 
-.th-opt {
-    width: 15vh;
-}
-
-.th-name, .th-studio {
-    width: 30vh;
-}
-
-.nav {
-    background: #ffffff2c;
-}
-
-.hidden-divs {
-    display: flex;
-    justify-content: center;
+tbody:hover {
+    background-color: white;
 }

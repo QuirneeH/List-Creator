@@ -104,7 +104,7 @@ function setUpTable(datas, index) {
     }
 
     const tbody = document.createElement('tbody');
-    tbody.id = "tbody-" + datas[0];
+    tbody.classList.add("infos");
     table.append(tbody);
 
     for(let i = 1; i < datas.length; i++) {
