@@ -16,15 +16,3 @@ body {
 .tables {
     grid-column: 2/3;
 }
-
-#divFinish {
-    grid-row: 1/2;
-}
-
-#divWatching {
-    grid-row: 2/3;
-}
-
-#divWish {
-    grid-row: 3/4;
-}
