@@ -4,6 +4,7 @@
  * @param {int} id 
  */
 function edit(list, id) {
+    alert('função indisponível no momento');
     // continua..
 }
 
