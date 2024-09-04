@@ -56,10 +56,10 @@ function dataWish() {
  * @param {int} index Numero referente ao índice do array com os dados
  * @returns {HTMLButtonElement}
  */
-function createButtonEdit(index) {
+function createButtonEdit(index, table) {
     const buttonEdit = document.createElement('button');
-    buttonEdit.classList.add('btn-option', index);
-    buttonEdit.id = "edit";
+    buttonEdit.classList.add('btn', table, 'edit');
+    buttonEdit.id = index;
 
     const optEdit = document.createElement('i');
     optEdit.classList.add('fa', 'fa-pencil');
@@ -74,10 +74,10 @@ function createButtonEdit(index) {
  * @param {int} index Numero referente ao índice do array com os dados
  * @returns {HTMLButtonElement}
  */
-function createButtonDelete(index) {
+function createButtonDelete(index, table) {
     const buttonDelete = document.createElement('button');
-    buttonDelete.classList.add('btn-option', index);
-    buttonDelete.id = "delete";
+    buttonDelete.classList.add('btn', table, 'delete');
+    buttonDelete.id = index;
 
     const optDelete = document.createElement('i');
     optDelete.classList.add('fa', 'fa-trash');
@@ -104,7 +104,8 @@ function setUpTable(datas, index) {
     }
 
     const tbody = document.createElement('tbody');
-    tbody.classList.add("infos");
+    tbody.classList.add("infos", datas[0]);
+    tbody.id = index;
     table.append(tbody);
 
     for(let i = 1; i < datas.length; i++) {
@@ -117,8 +118,8 @@ function setUpTable(datas, index) {
     const tdOpt = document.createElement('td');
     tdOpt.classList.add('td-options');
 
-    const buttonEdit = createButtonEdit(index);
-    const buttonDelete = createButtonDelete(index);
+    const buttonEdit = createButtonEdit(index, datas[0]);
+    const buttonDelete = createButtonDelete(index, datas[0]);
 
     tdOpt.append(buttonEdit, buttonDelete);
     tbody.append(tdOpt);

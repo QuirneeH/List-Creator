@@ -64,7 +64,7 @@
     justify-content: space-around;
 }
 
-.btn-option {
+.btn.edit {
     width: 45%;
     height: 25px;
     cursor: pointer;
@@ -72,13 +72,21 @@
     border: 1px solid black;
 }
 
-.btn-option#edit:hover {
+.btn.edit:hover {
     background: var(--alter-hover);
     text-shadow: 1px 1px 5px black;
     color: var(--tirth);
 }
 
-.btn-option#delete:hover {
+.btn.delete {
+    width: 45%;
+    height: 25px;
+    cursor: pointer;
+    background: none;
+    border: 1px solid black;
+}
+
+.btn.delete:hover {
     background: var(--negative-hover);
     text-shadow: 1px 1px 5px black;
     color: var(--tirth);
